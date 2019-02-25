@@ -3,7 +3,7 @@ import numpy
 import scipy.special
 class neuralNetwork:
     #initialise the neural network
-    def _inif_(self,inputnodes,hiddennodes,outputnodes,learningrate):
+    def __init__(self,inputnodes,hiddennodes,outputnodes,learningrate):
         #set number of nodes in each input hidden output layer
         self.inodes = inputnodes
         self.hnodes = hiddennodes
@@ -33,7 +33,7 @@ class neuralNetwork:
         hidden_errors = numpy.dot(self.who.T,output_errors)
 
         self.who += self.lr*numpy.dot((output_errors*final_outputs*(1.0-final_outputs)),numpy.transpose(hidden_outputs))
-        self.wih += self.lr*numpy.dot((hidden_errors*hidden_outputs*(1.0-hidden_outputs)),numpy.transpose*(inputs))
+        self.wih += self.lr*numpy.dot((hidden_errors*hidden_outputs*(1.0-hidden_outputs)),numpy.transpose(inputs))
         pass
 
     #query the neural network
